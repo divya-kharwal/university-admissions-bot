@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admissions Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <div class="logo">🎓</div>
+                        <div class="header-text">
+                            <h1>University Admissions Bot</h1>
+                            <p>Your AI-Powered Admissions Guide</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-status">
+                    <span class="status-indicator online"></span>
+                    <span class="status-text">Online</span>
+                </div>
+            </div>
+            
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar bot-avatar">🎓</div>
+                    <div class="message-content">
+                        <p><strong>Welcome to the University Admissions Assistant!</strong></p>
+                        <p>I'm here to help you with:</p>
+                        <ul>
+                            <li>Program eligibility criteria</li>
+                            <li>Application requirements and deadlines</li>
+                            <li>Document submission guidelines</li>
+                            <li>Scholarships and financial aid</li>
+                            <li>University policies and procedures</li>
+                            <li>Career opportunities</li>
+                        </ul>
+                        <p style="margin-top: 12px;"><em>What would you like to know about admissions?</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Ask about eligibility, programs, deadlines..."
+                        class="message-input"
+                        autocomplete="off"
+                    >
+                    <button id="sendBtn" class="send-button" title="Send message (Enter)">
+                        <span class="send-icon">✈️</span>
+                    </button>
+                </div>
+                <div class="quick-tips">
+                    <span class="tip-label">💡 Try:</span>
+                    <button class="quick-tip" onclick="setQuery('What are the eligibility criteria?')">Eligibility</button>
+                    <button class="quick-tip" onclick="setQuery('What documents do I need?')">Documents</button>
+                    <button class="quick-tip" onclick="setQuery('Tell me about scholarships')">Scholarships</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
